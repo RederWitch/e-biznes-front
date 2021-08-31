@@ -1,0 +1,7 @@
+.loginscreen {
+    display: flex;
+    flex-direction: column;
+    width: 17%;
+    margin: auto;
+    margin-top: 3rem;
+}
