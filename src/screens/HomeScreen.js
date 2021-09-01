@@ -14,6 +14,20 @@ const HomeScreen = () => {
     dispatch(listProducts());
   }, [dispatch]);
 
+    useEffect(() => {
+        const query = new URLSearchParams(location.search);
+        const paramEmail = query.get("email");
+        const paramAuth = query.get("authenticator");
+        if (paramEmail) {
+            document.cookie = `email=${paramEmail}; path=/`;
+            document.cookie = `oAuth=true; path=/`;
+            document.cookie = `authenticator=${decodeURIComponent(
+                paramAuth
+            ).replaceAll(" ", "+")}; path=/`;
+            window.location.href = "/";
+        }
+    }, []);
+
   return (
     <div className="homescreen">
       <h2 className="homescreen__title">Produkty</h2>
