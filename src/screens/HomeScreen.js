@@ -1,3 +1,4 @@
+import {useLocation} from "react-router-dom";
 import "./HomeScreen.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -5,6 +6,7 @@ import Product from "../components/Product";
 import { getProducts as listProducts } from "../redux/actions/productActions";
 
 const HomeScreen = () => {
+    let location = useLocation();
   const dispatch = useDispatch();
 
   const getProducts = useSelector((state) => state.getProducts);

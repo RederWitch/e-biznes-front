@@ -36,7 +36,7 @@ const Navbar = ({ click }) => {
           </Link>
         </li>
         {
-          isLoggedIn ?
+          !isLoggedIn ?
         <li>
          <Link to="/login" className="log_in_link">
             <i className="fas fa-shopping-cart"></i>
