@@ -1,5 +1,4 @@
 import * as actionTypes from "../constants/cartConstants";
-import axios from "axios";
 import client from "../../client";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
